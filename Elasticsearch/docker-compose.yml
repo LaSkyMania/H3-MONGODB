@@ -2,8 +2,8 @@ version: '2.2'
 services:
   elasticsearch:
     platform: linux/x86_64
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2-arm64
-    container_name: elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.11.1
+    container_name: eelasticsearch
     restart: always
     environment:
       - xpack.security.enabled=false
@@ -27,8 +27,8 @@ services:
 
   kibana:
     platform: linux/x86_64
-    container_name: kibana
-    image: docker.elastic.co/kibana/kibana:7.10.2-arm64
+    container_name: ekibana
+    image: docker.elastic.co/kibana/kibana:7.11.1
     restart: always
     ports:
       - 5601:5601

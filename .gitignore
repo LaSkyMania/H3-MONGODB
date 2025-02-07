@@ -1,3 +1,4 @@
 __pycache__
 .*
 Elasticsearch/elas1
+python_logs.log
