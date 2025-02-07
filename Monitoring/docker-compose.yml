@@ -4,7 +4,7 @@ services:
   elasticsearch:
     platform: linux/x86_64
     image: docker.elastic.co/elasticsearch/elasticsearch:7.11.1
-    container_name: elasticsearch
+    container_name: melasticsearch
     environment:
       - discovery.type=single-node
       - ES_JAVA_OPTS=-Xms1g -Xmx1g
@@ -19,7 +19,7 @@ services:
   logstash:
     platform: linux/x86_64
     image: docker.elastic.co/logstash/logstash:7.11.1
-    container_name: logstash
+    container_name: mlogstash
     environment:
       - LS_SETTINGS_DIR=/usr/share/logstash/config
     volumes:
@@ -38,7 +38,7 @@ services:
   kibana:
     platform: linux/x86_64
     image: docker.elastic.co/kibana/kibana:7.11.1
-    container_name: kibana
+    container_name: mkibana
     environment:
     - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
     ports:
@@ -51,7 +51,7 @@ services:
   filebeat:
     platform: linux/x86_64
     image: docker.elastic.co/beats/filebeat:7.11.2
-    container_name: filebeat
+    container_name: mfilebeat
     volumes:
       - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
       - ./logs:/logs
@@ -65,7 +65,7 @@ services:
   metricbeat:
     platform: linux/x86_64
     build: ./metricbeat
-    container_name: metricbeat
+    container_name: mmetricbeat
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - metricbeat-data:/usr/share/metricbeat/data
