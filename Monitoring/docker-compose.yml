@@ -2,6 +2,7 @@ version: '2.2'
 
 services:
   elasticsearch:
+    platform: linux/x86_64
     image: docker.elastic.co/elasticsearch/elasticsearch:7.11.1
     container_name: elasticsearch
     environment:
@@ -16,6 +17,7 @@ services:
       - elk
 
   logstash:
+    platform: linux/x86_64
     image: docker.elastic.co/logstash/logstash:7.11.1
     container_name: logstash
     environment:
@@ -34,6 +36,7 @@ services:
       - elasticsearch
 
   kibana:
+    platform: linux/x86_64
     image: docker.elastic.co/kibana/kibana:7.11.1
     container_name: kibana
     environment:
@@ -46,6 +49,7 @@ services:
       - elasticsearch
 
   filebeat:
+    platform: linux/x86_64
     image: docker.elastic.co/beats/filebeat:7.11.2
     container_name: filebeat
     volumes:
@@ -59,6 +63,7 @@ services:
 
 
   metricbeat:
+    platform: linux/x86_64
     build: ./metricbeat
     container_name: metricbeat
     volumes:
