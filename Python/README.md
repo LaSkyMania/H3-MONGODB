@@ -1,10 +1,12 @@
-# 🚀 Mon Guide sur le Monitoring
+# 🚀 Mon Guide sur Python
 
 ## 📌 Introduction
 
-Je vous présente ici mon travail sur le Monitoring, une pratique essentielle pour surveiller et analyser les performances des applications. J’ai exploré des outils tels que Elasticsearch, Kibana, Filebeat, Logstash pour collecter, stocker et visualiser les données. 📊
+Je vous présente ici mon travail sur Python,
 
-## 🐳 Installation ## 🐳 Installation de Filebeat, Logstash et Elasticsearch
+---
+
+## 🐳 Installation de Filebeat, Logstash et Elasticsearch
 
 J'ai choisi d'installer Filebeat, Logstash et Elasticsearch en utilisant Docker, ce qui est une méthode rapide et efficace. Voici comment j'ai procédé :
 
@@ -44,9 +46,19 @@ Bravo ! 🎉 Filebeat, Logstash et Elasticsearch étaient prêts à être utilis
 
 ---
 
+## 🛠️ Index Pattern
+
+J’ai créé un index pattern dans Kibana pour visualiser les données de Filebeat. Voici comment j’ai procédé :
+
+1. J’ai ouvert Kibana dans mon navigateur à l’adresse `http://localhost:5601`.
+2. J’ai cliqué sur l’onglet `Management` dans le menu de gauche.
+3. J’ai sélectionné `Index Patterns` et cliqué sur le bouton `Create index pattern`.
+4. J’ai saisi `python-logs*` comme nom de l’index pattern et cliqué sur `Next step`.
+5. J’ai choisi `@timestamp` comme champ de temps et validé avec le bouton `Create index pattern`.
+
 ### 🔹 Création des graphiques
 
-J’ai créé plusieurs graphiques pour visualiser les données dans Kibana :
+J’ai créé plusieurs graphiques pour visualiser les données de Python dans Kibana :
 
 1. **Histogramme** : J’ai affiché le nombre de logs par niveau de gravité.
 2. **Camembert** : J’ai affiché la répartition des logs par source.
@@ -54,4 +66,4 @@ J’ai créé plusieurs graphiques pour visualiser les données dans Kibana :
 
 ## 📌 Conclusion
 
-J’ai réussi à installer et configurer Filebeat, Logstash et Elasticsearch pour collecter, stocker et visualiser les données. J’ai également créé des graphiques pour analyser les logs et surveiller les performances. Le Monitoring est un outil puissant pour améliorer la qualité des applications et détecter les problèmes rapidement. 🚀
+J’ai réussi à installer et configurer Filebeat, Logstash et Elasticsearch pour visualiser les logs de Python dans Kibana. C’était une expérience enrichissante et je suis prêt à explorer davantage ces outils !
